@@ -43,10 +43,10 @@ export function RecipeDock() {
 
   return (
     <div className="sticky bottom-[max(0.75rem,env(safe-area-inset-bottom))] z-30 mx-auto mt-4 w-full max-w-5xl [@media(max-height:30rem)]:static">
-      <div className="flex flex-col gap-2 rounded-2xl border border-border/80 bg-card/95 p-2 shadow-lg backdrop-blur-md @3xl/main:flex-row @3xl/main:items-center @3xl/main:justify-between sm:px-3.5 sm:py-2.5">
+      <div className="flex flex-col gap-2 rounded-2xl border border-border/80 bg-card/95 p-2 shadow-[0_14px_38px_-12px_rgba(22,22,21,0.18)] backdrop-blur-xl @3xl/main:flex-row @3xl/main:items-center @3xl/main:justify-between sm:px-3.5 sm:py-2.5">
         <div className="grid min-w-0 max-w-full flex-1 grid-cols-3 gap-1.5 sm:gap-2">
           {/* Slot 1: Portrait */}
-          <div className="relative flex min-w-0 flex-col items-start gap-1.5 rounded-xl bg-muted/80 p-1.5 @md/main:flex-row @md/main:items-center sm:gap-2 sm:p-2">
+          <div className="relative flex min-w-0 flex-col items-start gap-1.5 rounded-xl border border-border/60 bg-background/70 p-1.5 @md/main:flex-row @md/main:items-center sm:gap-2 sm:p-2">
             {recipe.portrait ? (
               <>
                 <img

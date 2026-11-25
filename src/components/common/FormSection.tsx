@@ -1,14 +1,26 @@
 import type { ReactNode } from 'react'
 import { cn } from '@/lib/utils'
 
-// 设置页的分组卡片
-export function Section({ title, desc, actions, children, className }: { title: string; desc?: string; actions?: ReactNode; children: ReactNode; className?: string }) {
+// 设置页与工作台的分组卡片
+export function Section({
+  title,
+  desc,
+  actions,
+  children,
+  className,
+}: {
+  title: string
+  desc?: string
+  actions?: ReactNode
+  children: ReactNode
+  className?: string
+}) {
   return (
-    <section className="@container/section min-w-0 rounded-[22px] bg-muted p-4 sm:p-6">
-      <div className="flex flex-wrap items-start justify-between gap-3">
+    <section className="@container/section min-w-0 rounded-2xl border border-border/80 bg-card p-4 shadow-[0_1px_2px_rgba(0,0,0,0.02)] sm:p-6">
+      <div className="flex flex-wrap items-start justify-between gap-3 border-b border-border/60 pb-3.5">
         <div className="min-w-0 [overflow-wrap:anywhere]">
-          <h2 className="text-base font-semibold">{title}</h2>
-          {desc && <p className="mt-1 text-sm text-muted-foreground">{desc}</p>}
+          <h2 className="font-editorial text-base font-semibold tracking-tight">{title}</h2>
+          {desc && <p className="mt-1 text-xs text-muted-foreground sm:text-sm">{desc}</p>}
         </div>
         {actions && <div className="flex max-w-full flex-wrap items-center gap-1.5 [&>div]:flex-wrap">{actions}</div>}
       </div>
@@ -18,7 +30,19 @@ export function Section({ title, desc, actions, children, className }: { title: 
 }
 
 // 表单项：标签 + 输入框 + 提示
-export function Field({ label, htmlFor, hint, badge, children }: { label: string; htmlFor?: string; hint?: string; badge?: ReactNode; children: ReactNode }) {
+export function Field({
+  label,
+  htmlFor,
+  hint,
+  badge,
+  children,
+}: {
+  label: string
+  htmlFor?: string
+  hint?: string
+  badge?: ReactNode
+  children: ReactNode
+}) {
   return (
     <div className="grid min-w-0 content-start gap-2">
       <div className="flex min-h-5 flex-wrap items-center gap-2">
@@ -27,7 +51,9 @@ export function Field({ label, htmlFor, hint, badge, children }: { label: string
         </label>
         {badge}
       </div>
-      <div className="min-w-0 [&_button[role=combobox]]:min-w-0 [&_button[role=combobox]]:bg-background [&_[data-slot=select-value]]:min-w-0 [&_[data-slot=select-value]]:overflow-hidden [&_input]:bg-background">{children}</div>
+      <div className="min-w-0 [&_button[role=combobox]]:min-w-0 [&_button[role=combobox]]:bg-background [&_[data-slot=select-value]]:min-w-0 [&_[data-slot=select-value]]:overflow-hidden [&_input]:bg-background">
+        {children}
+      </div>
       {hint && <p className="text-xs text-muted-foreground [overflow-wrap:anywhere]">{hint}</p>}
     </div>
   )

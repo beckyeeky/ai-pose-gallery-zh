@@ -139,6 +139,7 @@ function PosesPage() {
   return (
     <>
       <PageHeader
+        eyebrow="Archive 01 · Anatomical Pose"
         title="动作姿势库"
         actions={
           <div className="flex flex-wrap items-center gap-2">
@@ -251,7 +252,7 @@ function PosesPage() {
       </div>
 
       {/* 搜索与筛选面板 */}
-      <div className="grid gap-3 rounded-[22px] bg-muted p-4 @xl/main:grid-cols-2 @4xl/main:grid-cols-[minmax(0,1fr)_200px_minmax(0,auto)_auto]">
+      <div className="grid gap-3 rounded-2xl border border-border/80 bg-card p-4 @xl/main:grid-cols-2 @4xl/main:grid-cols-[minmax(0,1fr)_200px_minmax(0,auto)_auto]">
         <div className="relative">
           <SearchIcon className="pointer-events-none absolute top-1/2 left-3 size-4 -translate-y-1/2 text-muted-foreground" />
           <Input

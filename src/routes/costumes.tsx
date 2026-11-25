@@ -123,7 +123,7 @@ function CostumesPage() {
 
   return (
     <>
-      <PageHeader title="服装穿搭库" />
+      <PageHeader eyebrow="Archive 02 · Costume Lookbook" title="服装穿搭库" />
 
       <div className="flex flex-wrap items-center justify-between gap-2" aria-label="服装一级分类">
         <div className="flex flex-wrap gap-2">
@@ -152,8 +152,10 @@ function CostumesPage() {
             setShown(60)
           }}
           className={cn(
-            'shrink-0 rounded-full px-3.5 py-1.5 text-sm font-medium transition-colors',
-            activeCategory === '' ? 'bg-primary text-primary-foreground' : 'bg-muted text-muted-foreground hover:text-foreground'
+            'shrink-0 rounded-full border px-3.5 py-1.5 text-sm font-medium transition-colors',
+            activeCategory === ''
+              ? 'border-primary bg-primary text-primary-foreground'
+              : 'border-border/70 bg-card text-muted-foreground hover:border-foreground/30 hover:text-foreground'
           )}
         >
           全部穿搭 ({baseCostumes.length})
